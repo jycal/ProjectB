@@ -7,6 +7,6 @@ namespace c_.projectb.ProjectB.ProjectB.MiniProject
 {
     public class Weapons
     {
-        //test
+        //test2
     }
 }
