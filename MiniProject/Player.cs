@@ -10,7 +10,7 @@ namespace MiniProject
         // fields
         public string Name;
         public int CurrentHitPoints;
-        public int MaximumHitPoints = 100;
+        public int MaximumHitPoints = 20;
         public int Gold;
         public int ExperiencePoints;
         public int Level;
@@ -33,7 +33,7 @@ namespace MiniProject
             // begint op locatie 1
             this.CurrentLocation = World.LOCATION_ID_HOME;
             // hp op 100 zetten
-            this.CurrentHitPoints = 100;
+            this.CurrentHitPoints = 20;
 
         }
 
@@ -45,6 +45,12 @@ namespace MiniProject
         {
             // hp naar beneden halen
             this.CurrentHitPoints -= damageAmount;
+            // player dood laten gaan
+            if (CurrentHitPoints <= 0)
+            {
+                Console.WriteLine("Health: 0, Game Over");
+                Menu.Quit();
+            }
         }
 
         public void UpPlayerHealth(int healAmount)
