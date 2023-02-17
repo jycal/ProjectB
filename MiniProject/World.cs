@@ -83,7 +83,7 @@ public static class World
         Monsters.Add(giantSpider);
     }
 
-    public static void PopulateQuests()
+    public static void PopulateQuaests()
     {
         Quest clearAlchemistGarden =
             new Quest(
@@ -248,5 +248,9 @@ public static class World
         }
 
         return null;
+    }
+    public static void Main(string[] args)
+    {
+        print("Hello World!");
     }
 }
