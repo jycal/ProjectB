@@ -1,0 +1,5 @@
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.csproj.AssemblyReference.cache
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.AssemblyInfoInputs.cache
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.AssemblyInfo.cs
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.csproj.CoreCompileInputs.cache
