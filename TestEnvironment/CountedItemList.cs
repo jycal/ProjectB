@@ -9,23 +9,34 @@ public class CountedItemList
     }
 
     // Add an item to the list
-    public void AddItem(Item item, int quantity = 1)
+    public void AddItem(Item item)
     {
-        if (TheCountedItemList.Exists(x => x.TheItem.ID == item.ID))
+        foreach (CountedItem counteditem in TheCountedItemList)
         {
-            foreach (CountedItem counteditem in TheCountedItemList)
+            if (counteditem.TheItem.ID == item.ID)
             {
-                if (counteditem.TheItem.ID == item.ID)
-                {
-                    counteditem.Quantity += quantity;
-                    break;
-                }
+                counteditem.Quantity++;
+                return;
             }
         }
-        else
+
+        // If we get here, the item was not found in the list, so add it
+        TheCountedItemList.Add(new CountedItem(item, 1));
+    }
+
+    public void AddCountedItem(CountedItem item, int count = 1)
+    {
+        foreach (CountedItem counteditem in TheCountedItemList)
         {
-            TheCountedItemList.Add(new CountedItem(item, quantity));
+            if (counteditem.TheItem.ID == item.TheItem.ID)
+            {
+                counteditem.Quantity += count;
+                return;
+            }
         }
+
+        // If we get here, the item was not found in the list, so add it
+        TheCountedItemList.Add(new CountedItem(item.TheItem, count));
     }
 
     // Remove an item from the list

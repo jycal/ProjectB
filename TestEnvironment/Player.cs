@@ -22,12 +22,14 @@ public class Player
         this.Level = 0;
         this.ExperiencePoints = 0;
         // begint met rusty zwaart
-        this.CurrentWeapon = Weapon;
+        this.CurrentWeapon = null!;
         // begint op locatie 1
-        this.CurrentLocation = World.LOCATION_ID_HOME;
+        this.CurrentLocation = World.LocationByID(1);
         // hp op 100 zetten
         this.CurrentHitPoints = 100;
-
+        // inventory en questlog aanmaken
+        this.QuestLog = new QuestList();
+        this.Inventory = new CountedItemList();
     }
 
     // methods
@@ -68,4 +70,5 @@ public class Player
         // nieuw goed toevoegen
         this.Gold += newGold;
     }
+    
 }

@@ -2,31 +2,42 @@
 public class Monster
 {
     // Fields
-    public static int ID;
+    public int ID;
 
-    public static string Name;
+    public static string? Name;
 
-    public static string NamePlural;
+    public static string? NamePlural;
 
     public static int MaximumDamage = 3;
+
+    public static int MinimumDamage = 0;
+
     public static int RewardGold = 5;
 
-    public static CountedItemList Loot;
+    public CountedItemList? Loot;
 
     public static int CurrentHitPoints = 14;
 
-    public Monster()
+    public static int MaximumHitPoints = 14;
+
+    public Monster(int id, string name, string namePlural, int maximumDamage, int minimumDamage, int rewardGold, int currentHitPoints, int maximumHitPoints)
     {
-        this.ID = ID;
-        this.Name = Name;
-        this.Loot = Loot;
+        ID = id;
+        Name = name;
+        NamePlural = namePlural;
+        MaximumDamage = maximumDamage;
+        MinimumDamage = minimumDamage;
+        RewardGold = rewardGold;
+        Loot = null!;
+        CurrentHitPoints = currentHitPoints;
+        MaximumHitPoints = maximumHitPoints;
     }
 
     public int DoDamage()
     {
         Random attackRange = new Random();
         // random damage kiezen tussn min en max
-        int damageValue = attackRange.Next(1, this.MaximumDamage);
+        int damageValue = attackRange.Next(1, MaximumDamage);
         // damage van monster hp afhalen
 
         // via class monster of gwn int returnen?

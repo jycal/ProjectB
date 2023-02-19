@@ -1,16 +1,19 @@
 public class Weapon
 {
     public int ID;
-    public string Name;
-    public string NamePlural;
+    public string? Name;
+    public string? NamePlural;
     public int MinimumDamage;
     public int MaximumDamage;
 
-    // public Weapon()
-    // {
-    //     this.ID = World.WEAPON_ID_RUSTY_SWORD;
-
-    // }
+    public Weapon(int id, string name, string namePlural, int minimumDamage, int maximumDamage)
+    {
+        ID = id;
+        Name = name;
+        NamePlural = namePlural;
+        MinimumDamage = minimumDamage;
+        MaximumDamage = maximumDamage;
+    }
 
 
     // method om weapon te intialisen
@@ -27,7 +30,7 @@ public class Weapon
                     this.ID = weapon.ID;
                     this.Name = weapon.Name;
                     this.NamePlural = weapon.NamePlural;
-                    this.MinimumDamage = weapon.NamePlural;
+                    this.MinimumDamage = weapon.MinimumDamage;
                     this.MaximumDamage = weapon.MaximumDamage;
                 }
             }
@@ -41,7 +44,7 @@ public class Weapon
                     this.ID = weapon.ID;
                     this.Name = weapon.Name;
                     this.NamePlural = weapon.NamePlural;
-                    this.MinimumDamage = weapon.NamePlural;
+                    this.MinimumDamage = weapon.MinimumDamage;
                     this.MaximumDamage = weapon.MaximumDamage;
                 }
             }

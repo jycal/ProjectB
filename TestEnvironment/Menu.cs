@@ -52,13 +52,13 @@ public class Menu
             Console.WriteLine("Where would you like to go?");
             Console.WriteLine($"You are at {CurrentLocation}. From here you can go:");
             Console.WriteLine($"  P\n  A\n V F T G B S\n   H");
-            Location();
+            World.LocationByID(1);
         }
         else if (choice == 3)
         {
             // Player en Monster moeten vechten in Game.cs
-            Player();
-            Monster();
+            // Player();
+            // Monster();
         }
         else if (choice == 4)
         {
