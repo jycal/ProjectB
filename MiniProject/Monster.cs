@@ -46,4 +46,4 @@ namespace MiniProject
         Console.WriteLine("HP: {0}", CurrentHitPoints);
         Console.WriteLine("Attack: {0}", DoDamage());
     }
-}
+  
