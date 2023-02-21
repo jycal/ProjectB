@@ -31,13 +31,13 @@ public class Location
     }
 
     public void Move()
-    {   
+    {
         bool IsMoving = true;
         while (IsMoving)
         {
             var current_location = " ";
             Console.WriteLine("Where would you like to go?");
-            Console.WriteLine($"You are at {this.Name}.");
+            Console.WriteLine($"You are at {current_location}.");
             Console.WriteLine($"  P\n  A\n V F T G B S\n   H");
             string Direction = Convert.ToString(Console.ReadLine()!);
             if (Direction == "T")
