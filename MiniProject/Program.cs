@@ -12,13 +12,17 @@
                      __/ |                                             __/ |                                        
                     |___/                                             |___/                                         
 ");
-        Player player = new Player("Player");
-        SuperAdventure game = new SuperAdventure(player);
-        Location new_loc = new Location(1, "Town Square", "You see a fountain.", null, null, null);
-        Console.WriteLine(new_loc.Description);
-        World.PopulateLocations();
-        string name = player.CurrentLocation.Name;
-        Console.WriteLine(name);
-        game.Run();
+
+        string text = "What is your name? ";
+        foreach (char c in text)
+        {
+            Console.Write(c);
+            Thread.Sleep(50);
+        }
+        Console.WriteLine();
+        string name = Console.ReadLine()!;
+
+        Player PlayerOne = new Player(name);
     }
+
 }
