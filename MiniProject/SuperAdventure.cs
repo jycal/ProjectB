@@ -10,7 +10,16 @@ public class SuperAdventure
     {
         // player aanmaken
         _player = player;
-
+        DateTime now = DateTime.Now;
+        string intro = $@"Welcome to Kirby & TheCrystalPrint. Kirby named {player.Name} must find the way to Walter White, the druglord (alchemist).
+Current location: {player.CurrentLocation.Name}, it is currently {now.Hour}:{now.Minute}
+Time to get out of bed.";
+        foreach (char c in intro)
+        {
+            Console.Write(c);
+            Thread.Sleep(50);
+        }
+        Console.WriteLine();
         // game over op false zetten
         _gameOver = false;
     }

@@ -23,6 +23,8 @@
         string name = Console.ReadLine()!;
 
         Player PlayerOne = new Player(name);
+        SuperAdventure super = new SuperAdventure(PlayerOne);
+        super.Run();
     }
 
 }
