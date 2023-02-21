@@ -1,6 +1,6 @@
 ﻿class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         Console.WriteLine(@"
   _  ___      _                      _______ _             _____                _        _   _____      _       _   
@@ -12,5 +12,16 @@
                      __/ |                                             __/ |                                        
                     |___/                                             |___/                                         
 ");
+        string text = "What is your name? ";
+        foreach (char c in text)
+        {
+            Console.Write(c);
+            Thread.Sleep(50);
+        }
+        Console.WriteLine();
+        string name = Console.ReadLine()!;
+
+        Player PlayerOne = new Player(name);
     }
+
 }
