@@ -8,7 +8,7 @@ public class Player
     public int ExperiencePoints;
     public int Level;
     public Weapon CurrentWeapon;
-    public Location CurrentLocation;
+    public Location? CurrentLocation = World.LocationByID(World.LOCATION_ID_HOME);
     public QuestList QuestLog;
     public CountedItemList Inventory;
 
@@ -24,7 +24,6 @@ public class Player
         // begint met rusty zwaart
         this.CurrentWeapon = null!;
         // begint op locatie 1
-        this.CurrentLocation = World.LocationByID(1);
         // hp op 100 zetten
         this.CurrentHitPoints = 100;
         // inventory en questlog aanmaken

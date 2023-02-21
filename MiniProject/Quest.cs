@@ -19,6 +19,6 @@ public class Quest
         this.RewardGold = rewardgold;
         this.RewardItem = rewarditem!;
         this.RewardWeapon = rewardweapon!;
-        this.QuestCompletionItems = null!;
+        this.QuestCompletionItems = new CountedItemList();
     }
 }

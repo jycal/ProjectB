@@ -1,0 +1,15 @@
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.csproj.AssemblyReference.cache
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.AssemblyInfoInputs.cache
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.AssemblyInfo.cs
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.csproj.CoreCompileInputs.cache
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\bin\Debug\net6.0\MiniProject.exe
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\bin\Debug\net6.0\MiniProject.deps.json
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\bin\Debug\net6.0\MiniProject.runtimeconfig.json
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\bin\Debug\net6.0\MiniProject.dll
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\bin\Debug\net6.0\MiniProject.pdb
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.dll
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\refint\MiniProject.dll
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.pdb
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\MiniProject.genruntimeconfig.cache
+D:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\obj\Debug\net6.0\ref\MiniProject.dll

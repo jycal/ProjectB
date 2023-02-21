@@ -16,7 +16,6 @@ public class CountedItemList
             if (counteditem.TheItem.ID == item.ID)
             {
                 counteditem.Quantity++;
-                return;
             }
         }
 
@@ -31,7 +30,6 @@ public class CountedItemList
             if (counteditem.TheItem.ID == item.TheItem.ID)
             {
                 counteditem.Quantity += count;
-                return;
             }
         }
 

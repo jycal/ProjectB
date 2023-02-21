@@ -28,7 +28,7 @@ public class Monster
         MaximumDamage = maximumDamage;
         MinimumDamage = minimumDamage;
         RewardGold = rewardGold;
-        Loot = null!;
+        Loot = new CountedItemList();
         CurrentHitPoints = currentHitPoints;
         MaximumHitPoints = maximumHitPoints;
     }
