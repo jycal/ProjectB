@@ -1,6 +1,6 @@
 ﻿class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
         Console.WriteLine(@"
   _  ___      _                      _______ _             _____                _        _   _____      _       _   
@@ -12,5 +12,13 @@
                      __/ |                                             __/ |                                        
                     |___/                                             |___/                                         
 ");
+        Player player = new Player("Player");
+        SuperAdventure game = new SuperAdventure(player);
+        Location new_loc = new Location(1, "Town Square", "You see a fountain.", null, null, null);
+        Console.WriteLine(new_loc.Description);
+        World.PopulateLocations();
+        string name = player.CurrentLocation.Name;
+        Console.WriteLine(name);
+        game.Run();
     }
 }

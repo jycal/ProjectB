@@ -50,7 +50,7 @@ public class Menu
         else if (choice == 2)
         {
             Console.WriteLine("Where would you like to go?");
-            Console.WriteLine($"You are at {1}. From here you can go:");
+            Console.WriteLine($"You are at {CurrentLocation}. From here you can go:");
             Console.WriteLine($"  P\n  A\n V F T G B S\n   H");
             World.LocationByID(1);
         }
