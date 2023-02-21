@@ -18,37 +18,11 @@ public class Weapon
 
     // method om weapon te intialisen
     // geef aan het begin string mee met welke en als je een ander weapon krijgt veranderd het
-    public void SetWeapon(string currentweapon)
+    public void SetWeapon(int weaponid)
     {
-        if (currentweapon == "rustysword")
-        {
-            // met for loop wapen uit weapon lijst halen en in fields zetten (kon miss ook gwn in de constructor oops)
-            foreach (Weapon weapon in World.Weapons)
-            {
-                if (weapon.Name == "Rusty sword")
-                {
-                    this.ID = weapon.ID;
-                    this.Name = weapon.Name;
-                    this.NamePlural = weapon.NamePlural;
-                    this.MinimumDamage = weapon.MinimumDamage;
-                    this.MaximumDamage = weapon.MaximumDamage;
-                }
-            }
-        }
-        else if (currentweapon == "gun")
-        {
-            foreach (Weapon weapon in World.Weapons)
-            {
-                if (weapon.Name == "Club")
-                {
-                    this.ID = weapon.ID;
-                    this.Name = weapon.Name;
-                    this.NamePlural = weapon.NamePlural;
-                    this.MinimumDamage = weapon.MinimumDamage;
-                    this.MaximumDamage = weapon.MaximumDamage;
-                }
-            }
-        }
+
+        World.WeaponByID(weaponid);
+
     }
 
 

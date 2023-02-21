@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\jyczh\\Documents\\GitHub\\ProjectB\\MiniProject\\MiniProject.csproj": {}
+    "D:\\Megan\\School\\informatica\\project\\projectb\\ProjectB-1\\MiniProject\\MiniProject.csproj": {}
   },
   "projects": {
-    "D:\\Users\\jyczh\\Documents\\GitHub\\ProjectB\\MiniProject\\MiniProject.csproj": {
+    "D:\\Megan\\School\\informatica\\project\\projectb\\ProjectB-1\\MiniProject\\MiniProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\jyczh\\Documents\\GitHub\\ProjectB\\MiniProject\\MiniProject.csproj",
+        "projectUniqueName": "D:\\Megan\\School\\informatica\\project\\projectb\\ProjectB-1\\MiniProject\\MiniProject.csproj",
         "projectName": "MiniProject",
-        "projectPath": "D:\\Users\\jyczh\\Documents\\GitHub\\ProjectB\\MiniProject\\MiniProject.csproj",
-        "packagesPath": "C:\\Users\\jyczh\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\jyczh\\Documents\\GitHub\\ProjectB\\MiniProject\\obj\\",
+        "projectPath": "D:\\Megan\\School\\informatica\\project\\projectb\\ProjectB-1\\MiniProject\\MiniProject.csproj",
+        "packagesPath": "C:\\Users\\megan\\.nuget\\packages\\",
+        "outputPath": "D:\\Megan\\School\\informatica\\project\\projectb\\ProjectB-1\\MiniProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jyczh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\megan\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

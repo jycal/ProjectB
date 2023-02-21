@@ -101,7 +101,7 @@ public static class World
                 "Clear the farmer's field",
                 "Kill snakes in the farmer's field", 20, 20,
                 ItemByID(ITEM_ID_ADVENTURER_PASS),
-                null);
+                null!);
 
         clearFarmersField.QuestCompletionItems.AddCountedItem(new CountedItem(ItemByID(ITEM_ID_SNAKE_FANG), 3));
 
@@ -111,7 +111,7 @@ public static class World
                         "Collect spider silk",
                         "Kill spiders in the spider forest", 20, 30,
                         ItemByID(ITEM_ID_WINNERS_MEDAL),
-                        null);
+                        null!);
 
         clearSpidersForest.QuestCompletionItems.AddCountedItem(new CountedItem(ItemByID(ITEM_ID_SPIDER_SILK), 3));
 
@@ -195,7 +195,7 @@ public static class World
             }
         }
 
-        return null;
+        return null!;
     }
 
     public static Weapon WeaponByID(int id)
@@ -208,7 +208,7 @@ public static class World
             }
         }
 
-        return null;
+        return null!;
     }
 
     public static Item ItemByID(int id)
@@ -221,7 +221,7 @@ public static class World
             }
         }
 
-        return null;
+        return null!;
     }
 
     public static Monster MonsterByID(int id)
@@ -234,7 +234,7 @@ public static class World
             }
         }
 
-        return null;
+        return null!;
     }
 
     public static Quest QuestByID(int id)
@@ -247,6 +247,6 @@ public static class World
             }
         }
 
-        return null;
+        return null!;
     }
 }
