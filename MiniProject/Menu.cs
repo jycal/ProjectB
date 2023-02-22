@@ -64,9 +64,13 @@ public class Menu
                         Console.WriteLine($"You have arrived at {this.CurrentLocation}.\n");
                         break;
                     case "A":
-                        // Move to location A (Alchemist's hut)
+                        // Move to location A (Alchemist's hut
+
                         this.CurrentLocation = World.LocationByID(4).Name;
                         Console.WriteLine($"You have arrived at {this.CurrentLocation}.\n");
+                        Monster monster = new Monster(1, "Goblin", "A small, ugly creature", 10, 10, 5, 3, 10);
+                        SuperAdventure game = new SuperAdventure(_player);
+                        game.Fight(monster);
 
                         break;
                     case "V":
@@ -120,6 +124,7 @@ public class Menu
                         {
                             Console.WriteLine("You do not have the adventure pass to enter this area. Returning to menu...\n");
                             Console.ReadKey();
+
                             break;
                         }
                         break;
