@@ -68,6 +68,7 @@ public class Menu
                             case 4:
                                 Player.CurrentLocation = World.LocationByID(5);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 break;
                             default:
                                 Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
@@ -83,6 +84,7 @@ public class Menu
                             case 5:
                                 Player.CurrentLocation = World.LocationByID(4);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 break;
                             default:
                                 Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
@@ -97,6 +99,7 @@ public class Menu
                             case 7:
                                 Player.CurrentLocation = World.LocationByID(7);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 break;
                             default:
                                 Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
@@ -112,6 +115,7 @@ public class Menu
                             case 7:
                                 Player.CurrentLocation = World.LocationByID(6);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 // slang met id ophalen uit world
                                 Monster snake = World.MonsterByID(World.MONSTER_ID_SNAKE);
                                 // quest aanroepen
@@ -132,6 +136,7 @@ public class Menu
                             case 6:
                                 Player.CurrentLocation = World.LocationByID(2);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 break;
                             default:
                                 Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
@@ -147,6 +152,7 @@ public class Menu
                             case 8:
                                 Player.CurrentLocation = World.LocationByID(3);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 GuardPost guardpost = new GuardPost(Player);
                                 if (guardpost.guard_post() == false)
                                 {
@@ -169,6 +175,7 @@ public class Menu
                             case 9:
                                 Player.CurrentLocation = World.LocationByID(8);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 break;
                             default:
                                 Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
@@ -183,6 +190,7 @@ public class Menu
                             case 8:
                                 Player.CurrentLocation = World.LocationByID(9);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 // spider met id ophalen uit world
                                 Monster spider = World.MonsterByID(3);
                                 // spiderquest aanroepen
@@ -199,6 +207,7 @@ public class Menu
                             case 2:
                                 Player.CurrentLocation = World.LocationByID(1);
                                 Console.WriteLine($"You have arrived back {Player.CurrentLocation.Name}.\n");
+                                Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 break;
                         }
                         break;
