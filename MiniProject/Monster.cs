@@ -53,13 +53,20 @@ public class Monster
     }
     public bool Fight(Player player)
     {
-        // bool gameOver = false;
-        Console.WriteLine("A wild {0} appears!", this.Name);
-        Console.WriteLine("Prepare to fight!\n");
+        bool gameStart = true;
+        do
+        {
+            Console.WriteLine("A wild {0} appears!", this.Name);
+            Console.WriteLine("Prepare to fight!\n");
+            gameStart = false;
+        } while (gameStart == true);
+
         // Continue the fight until either the player or the monster has 0 HP
         while (player.CurrentHitPoints > 0 && this.CurrentHitPoints > 0)
         {
             // Prompt the player to choose an attack
+            Console.WriteLine($"Player HP: {player.CurrentHitPoints}");
+            Console.WriteLine($"Monster HP: {this.CurrentHitPoints}");
             Console.WriteLine("Choose your attack:");
             Console.WriteLine("1. Attack with {0}", player.CurrentWeapon.Name);
             Console.WriteLine("2. Use a healing potion");
