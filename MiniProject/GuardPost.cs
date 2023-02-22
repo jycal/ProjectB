@@ -9,7 +9,7 @@ class GuardPost
     public bool guard_post()
     {
         Console.WriteLine("You have arrived at the gate!");
-        Console.WriteLine("Jurn: O Great One who summons me, Terrible One who commands me, I stand by my oath, does thou have the Adventurer's Pass!(Y/N)");
+        Console.WriteLine("Jurn: O Great One who summons me, Terrible One who commands me, I stand by my oath, does thou have the Adventurer's Pass!(Yes/No)");
         string answer = Console.ReadLine()!;
         if (answer == "Yes")
         {

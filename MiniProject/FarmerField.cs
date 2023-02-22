@@ -22,7 +22,7 @@ class Farmer
         if (answer == "YEAH")
         {
             Console.WriteLine($"You are at {Player.CurrentLocation!.Name}.");
-            Console.WriteLine($"  P\n  A\n V F T G B S\n   H");
+            Console.WriteLine($"    P\n    A\nV F T G B S\n    H\n");
             Console.WriteLine("Enter 'V' to go to the Birdo's field.");
             string Direction = Convert.ToString(Console.ReadLine()!.ToUpper());
             if (Direction == "V")

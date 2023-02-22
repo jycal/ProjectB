@@ -34,7 +34,8 @@ public class Menu
             Console.WriteLine("1: See game stats");
             Console.WriteLine("2: Move");
             Console.WriteLine("3: Quit\n");
-            int choice = Convert.ToInt32(Console.ReadLine());
+            int choice;
+            choice = Int32.Parse(Console.ReadLine()!);
             if (choice == 1)
             {
                 Console.WriteLine($"Your current Location: {Player.CurrentLocation!.Name}");
@@ -55,7 +56,7 @@ public class Menu
             {
                 Console.WriteLine("Where would you like to go?");
                 Console.WriteLine($"You are at {Player.CurrentLocation!.Name}. From here you can go:");
-                Console.WriteLine($"  P\n  A\nV F T G B S\n  H\n");
+                Console.WriteLine($"    P\n    A\nV F T G B S\n    H\n");
                 World.LocationByID(1);
                 string destination = Console.ReadLine()!.ToUpper();
                 switch (destination)
