@@ -33,7 +33,7 @@ public class SpiderQuest
         if (answer == "Y")
         {
 
-            // Monster.Fight(Player);
+            Monster.Fight(Player);
             // if (Monster.Fight(Player) == true)
             // {
             //     itemGot = true;

@@ -17,6 +17,7 @@ public class SuperAdventure
 Current location: {player.CurrentLocation!.Name}, it is currently {formattedTime}
 Time to get out of bed.
 ";
+        // zwaard laten oppaken
         foreach (char c in intro)
         {
             Console.Write(c);
