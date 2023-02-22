@@ -7,4 +7,8 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MiniProject
+<<<<<<< HEAD
+build_property.ProjectDir = D:\Megan\School\informatica\project\projectb\ProjectB-1\MiniProject\
+=======
 build_property.ProjectDir = d:\Users\jyczh\Documents\GitHub\ProjectB\MiniProject\
+>>>>>>> d058d9bb0724a02756f4f3c50e2986ef31676de6
