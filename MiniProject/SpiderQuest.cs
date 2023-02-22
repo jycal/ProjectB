@@ -3,45 +3,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MiniProject
+
+public class SpiderQuest
 {
-    public class SpiderQuest
+    // fields
+    public Player Player;
+
+    public Monster Monster;
+
+    // constructor
+    public SpiderQuest(Player player, Monster monster)
     {
-        // fields
-        public Player Player;
+        this.Player = player;
+        this.Monster = monster;
+    }
 
-        // constructor
-        public SpiderQuest(Player player)
+
+    // methods
+    public void StartSpiderQuest()
+    {
+        // bool itemGot = false;
+        // intro
+        Console.WriteLine($"After crossing the bridge you have arrived at the {Player.CurrentLocation!.Name}");
+        Console.WriteLine($"You: “I shalt releaseth the town folks of their feareth!”");
+
+        // vechten met spider
+        Console.WriteLine($"Are you ready to fight the {Monster.Name} (Y/N)");
+        string answer = Console.ReadLine()!.ToUpper();
+        if (answer == "Y")
         {
-            this.Player = player;
+
+            // Monster.Fight(Player);
+            // if (Monster.Fight(Player) == true)
+            // {
+            //     itemGot = true;
+            // }
+
         }
 
 
-        // methods
-        public void StartSpiderQuest()
-        {
-            // intro
-            Console.WriteLine($"After crossing the bridge you have arrived at the {Player.CurrentLocation!.Name}");
-            Console.WriteLine($"");
-
-            // vechten met spider
-
-
-            // spider silk ontvangen
+        // spider silk ontvangen
 
 
 
 
-        }
-
-        public void EndSpiderQuest()
-        {
-            // teruggaan naar de bridge
-
-            // winner medal ontvangen
-
-        }
 
 
     }
+
+    public void EndSpiderQuest()
+    {
+        // teruggaan naar de bridge
+        Console.WriteLine($"You go back to the bridge after defeating the {Monster.NamePlural}");
+
+
+        // winner medal ontvangen
+
+    }
+
+
 }

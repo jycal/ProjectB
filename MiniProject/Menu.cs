@@ -131,7 +131,12 @@ public class Menu
                         // Move to location S (Spider forest)
                         Player.CurrentLocation = World.LocationByID(9);
                         Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
-
+                        // spider met id ophalen uit world
+                        Monster spider = World.MonsterByID(3);
+                        // spiderquest aanroepen
+                        SpiderQuest spiderquest = new SpiderQuest(Player, spider);
+                        spiderquest.StartSpiderQuest();
+                        spiderquest.EndSpiderQuest();
                         break;
                     case "H":
                         // Move to location H (Home)
