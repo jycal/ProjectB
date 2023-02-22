@@ -11,7 +11,6 @@ class Farmer
     {
         this.Player = player;
         this.Monster = World.MonsterByID(2);
-        this.Monster = World.MonsterByID(2);
     }
 
     public void Story()
