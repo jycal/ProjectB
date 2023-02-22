@@ -96,6 +96,8 @@ public class Monster
             {
                 Console.WriteLine("You have defeated the {0}!", this.Name);
                 player.AddGold(this.RewardGold);
+                // item bool meegeven
+                // bool itemGot = true;
                 return;
             }
 
