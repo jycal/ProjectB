@@ -2,24 +2,22 @@ public class Menu
 {
     // Fields
     public string Map;
-    // public string CurrentLocation;
-    // public int HP;
-    // public int Level;
-    // public int ExperiencePoints;
-    // public int Gold;
-    public Player Player;
+    public string CurrentLocation;
+    public int HP;
+    public int Level;
+    public int ExperiencePoints;
+    public int Gold;
     public List<PlayerQuest> QuesList;
     public List<CountedItemList> Inventory;
 
-    public Menu(string map, Player player)
+    public Menu(string map, string currentlocation, int hp, int level, int experiencepoints, int gold)
     {
         this.Map = map;
-        this.Player = player;
-        // this.CurrentLocation = currentlocation;
-        // this.HP = hp;
-        // this.Level = level;
-        // this.ExperiencePoints = experiencepoints;
-        // this.Gold = gold;
+        this.CurrentLocation = currentlocation;
+        this.HP = hp;
+        this.Level = level;
+        this.ExperiencePoints = experiencepoints;
+        this.Gold = gold;
         this.QuesList = new List<PlayerQuest>();
         this.Inventory = new List<CountedItemList>();
     }
@@ -37,11 +35,11 @@ public class Menu
             int choice = Convert.ToInt32(Console.ReadLine());
             if (choice == 1)
             {
-                Console.WriteLine($"Your current Location: {Player.CurrentLocation!.Name}");
-                Console.WriteLine($"Your current HP is {Player.CurrentHitPoints}");
-                Console.WriteLine($"Your at Level: {Player.Level}");
-                Console.WriteLine($"You have {Player.ExperiencePoints} Experience Points");
-                Console.WriteLine($"You have {Player.Gold} Golden Coins\n");
+                Console.WriteLine($"Your current Location: {CurrentLocation}");
+                Console.WriteLine($"Your current HP is {HP}");
+                Console.WriteLine($"Your at Level: {Level}");
+                Console.WriteLine($"You have {ExperiencePoints} Experience Points");
+                Console.WriteLine($"You have {Gold} Golden Coins\n");
                 foreach (PlayerQuest quest in QuesList)
                 {
                     Console.WriteLine($"The quests you've gone through consist of {quest}");
@@ -54,45 +52,45 @@ public class Menu
             else if (choice == 2)
             {
                 Console.WriteLine("Where would you like to go?");
-                Console.WriteLine($"You are at {Player.CurrentLocation!.Name}. From here you can go:");
+                Console.WriteLine($"You are at {CurrentLocation}. From here you can go:");
                 Console.WriteLine($"  P\n  A\nV F T G B S\n  H\n");
                 World.LocationByID(1);
-                string destination = Console.ReadLine()!.ToUpper();
+                string destination = Console.ReadLine().ToUpper();
                 switch (destination)
                 {
                     case "P":
                         // Move to location P (Alchemist's garden)
-                        Player.CurrentLocation = World.LocationByID(5);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                        this.CurrentLocation = World.LocationByID(5).Name;
+                        Console.WriteLine($"You have arrived at {this.CurrentLocation}.\n");
                         break;
                     case "A":
                         // Move to location A (Alchemist's hut)
-                        Player.CurrentLocation = World.LocationByID(4);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                        this.CurrentLocation = World.LocationByID(4).Name;
+                        Console.WriteLine($"You have arrived at {this.CurrentLocation}.\n");
 
                         break;
                     case "V":
                         // Move to location V (Farmer's field)
-                        Player.CurrentLocation = World.LocationByID(7);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                        this.CurrentLocation = World.LocationByID(7).Name;
+                        Console.WriteLine($"You have arrived at {this.CurrentLocation}.\n");
 
                         break;
                     case "F":
                         // Move to location F (Farmer)
-                        Player.CurrentLocation = World.LocationByID(6);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                        this.CurrentLocation = World.LocationByID(6).Name;
+                        Console.WriteLine($"You have arrived at {this.CurrentLocation}.\n");
 
                         break;
                     case "T":
                         // Move to location T (Town square)
-                        Player.CurrentLocation = World.LocationByID(2);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                        this.CurrentLocation = World.LocationByID(2).Name;
+                        Console.WriteLine($"You have arrived at {this.CurrentLocation}.\n");
 
                         break;
                     case "G":
                         // Move to location G (Guard post)
-                        Player.CurrentLocation = World.LocationByID(3);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                        this.CurrentLocation = World.LocationByID(3).Name;
+                        Console.WriteLine($"You have arrived at {this.CurrentLocation}.\n");
 
                         break;
                     case "B":
@@ -112,8 +110,8 @@ public class Menu
 
                             if (hasAdventurePass)
                             {
-                                Player.CurrentLocation = World.LocationByID(8);
-                                Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                this.CurrentLocation = World.LocationByID(8).Name;
+                                Console.WriteLine($"You have arrived at {this.CurrentLocation}.\n");
                                 break; // break out of the outer loop as well
                             }
                         }
@@ -129,14 +127,14 @@ public class Menu
 
                     case "S":
                         // Move to location S (Spider forest)
-                        Player.CurrentLocation = World.LocationByID(9);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                        this.CurrentLocation = World.LocationByID(9).Name;
+                        Console.WriteLine($"You have arrived at {this.CurrentLocation}.\n");
 
                         break;
                     case "H":
                         // Move to location H (Home)
-                        Player.CurrentLocation = World.LocationByID(1);
-                        Console.WriteLine($"You have arrived back {Player.CurrentLocation.Name}.\n");
+                        this.CurrentLocation = World.LocationByID(1).Name;
+                        Console.WriteLine($"You have arrived back {this.CurrentLocation}.\n");
 
                         break;
                     default:
