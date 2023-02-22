@@ -103,6 +103,8 @@ public class Monster
             {
                 Console.WriteLine("You have defeated the {0}!", this.Name);
                 player.AddGold(this.RewardGold);
+                int experiencepoints = 7;
+                player.LevelUp(experiencepoints);
                 // item bool meegeven
                 // bool itemGot = true;
                 return true;
