@@ -146,6 +146,13 @@ public class Menu
                             case 8:
                                 Player.CurrentLocation = World.LocationByID(3);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                GuardPost guardpost = new GuardPost(Player);
+                                if (guardpost.guard_post() == false)
+                                {
+                                    Player.CurrentLocation = World.LocationByID(2);
+                                    Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                    Console.ReadKey();
+                                }
                                 break;
                             default:
                                 Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
@@ -155,52 +162,44 @@ public class Menu
                         break;
                     case "B":
                         // Move to location B (Bridge)
-                        bool hasAdventurePass = false;
-
-                        foreach (CountedItemList itemList in Inventory)
+                        switch (Player.CurrentLocation!.ID)
                         {
-                            foreach (CountedItem countedItem in itemList.TheCountedItemList)
-                            {
-                                if (countedItem.TheItem.ID == World.ITEM_ID_ADVENTURER_PASS)
-                                {
-                                    hasAdventurePass = true;
-                                    break;
-                                }
-                            }
-
-                            if (hasAdventurePass)
-                            {
+                            case 3:
+                            case 9:
                                 Player.CurrentLocation = World.LocationByID(8);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
-                                break; // break out of the outer loop as well
-                            }
-                        }
-
-                        if (!hasAdventurePass)
-                        {
-                            Console.WriteLine("You do not have the adventure pass to enter this area. Returning to menu...\n");
-                            Console.ReadKey();
-
-                            break;
+                                break;
+                            default:
+                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.ReadKey();
+                                break;
                         }
                         break;
-
                     case "S":
                         // Move to location S (Spider forest)
-                        Player.CurrentLocation = World.LocationByID(9);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
-                        // spider met id ophalen uit world
-                        Monster spider = World.MonsterByID(3);
-                        // spiderquest aanroepen
-                        SpiderQuest spiderquest = new SpiderQuest(Player, spider);
-                        spiderquest.StartSpiderQuest();
-                        spiderquest.EndSpiderQuest();
+                        switch (Player.CurrentLocation!.ID)
+                        {
+                            case 8:
+                                Player.CurrentLocation = World.LocationByID(9);
+                                Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                // spider met id ophalen uit world
+                                Monster spider = World.MonsterByID(3);
+                                // spiderquest aanroepen
+                                SpiderQuest spiderquest = new SpiderQuest(Player, spider);
+                                spiderquest.StartSpiderQuest();
+                                spiderquest.EndSpiderQuest();
+                                break;
+                        }
                         break;
                     case "H":
                         // Move to location H (Home)
-                        Player.CurrentLocation = World.LocationByID(1);
-                        Console.WriteLine($"You have arrived back {Player.CurrentLocation.Name}.\n");
-
+                        switch (Player.CurrentLocation!.ID)
+                        {
+                            case 2:
+                                Player.CurrentLocation = World.LocationByID(1);
+                                Console.WriteLine($"You have arrived back {Player.CurrentLocation.Name}.\n");
+                                break;
+                        }
                         break;
                     default:
                         Console.WriteLine("Invalid destination. Please enter a valid location code.");
