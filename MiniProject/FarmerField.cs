@@ -10,7 +10,7 @@ class Farmer
     public Farmer(Player player, Monster monster)
     {
         this.Player = player;
-        this.Monster = World.MonsterByID(MONSTER_ID_SNAKE);
+        this.Monster = World.MonsterByID(2);
     }
 
     public void Story()
@@ -33,18 +33,18 @@ class Farmer
                 Console.WriteLine("You enter the field.\n As you slowly enter the field something slithers at your feet...");
                 Console.WriteLine("You get in position.\n The battle of a lifetime is going to begin.");
                 Monster.Fight(Player);
-                if (Monster.Fight(Player) == true)
-                {
-                    Console.WriteLine("CONGRATULATIONS YOUNG ONE YOU SLAYED THE SNAKES!!");
-                    Console.WriteLine($"Birdo: THANK YOU {Player.Name}.\n YOU'VE SAVED MY CROPS!");
-                    Console.WriteLine(Heart());
-                }
-                if (Monster.Fight(Player) == false)
-                {
-                    Console.WriteLine("OH NO YOU'VE BEEN OVERPOWERED!");
-                    Console.WriteLine("BIRDO AND HIS CROPS WILL SUFFER THE WRATH OF YOUR FAILURE!");
-                    Menu.Quit();
-                }
+                // if (Monster.Fight(Player) == true)
+                // {
+                //     Console.WriteLine("CONGRATULATIONS YOUNG ONE YOU SLAYED THE SNAKES!!");
+                //     Console.WriteLine($"Birdo: THANK YOU {Player.Name}.\n YOU'VE SAVED MY CROPS!");
+                //     Console.WriteLine(Heart());
+                // }
+                // if (Monster.Fight(Player) == false)
+                // {
+                //     Console.WriteLine("OH NO YOU'VE BEEN OVERPOWERED!");
+                //     Console.WriteLine("BIRDO AND HIS CROPS WILL SUFFER THE WRATH OF YOUR FAILURE!");
+                //     Menu.Quit();
+                // }
             }
             if (Direction != "V")
             {

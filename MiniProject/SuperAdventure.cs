@@ -17,13 +17,18 @@ public class SuperAdventure
 Current location: {player.CurrentLocation!.Name}, it is currently {formattedTime}
 Time to get out of bed.
 ";
-        // zwaard laten oppaken
+
+
         foreach (char c in intro)
         {
             Console.Write(c);
             Thread.Sleep(50);
         }
         Console.WriteLine();
+        // zwaard laten oppaken
+        Weapon zwaard = World.WeaponByID(1);
+        player.CurrentWeapon = zwaard;
+        Console.WriteLine($"While getting out of bed you stub your toe on an object. You look down and it's a {player.CurrentWeapon.Name}!\nThis could come in handy later!");
         Menu menuScreen = new Menu("Title", player);
         menuScreen.Screen();
         // World.PopulateLocations();

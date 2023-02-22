@@ -157,7 +157,7 @@ public class Menu
     }
 
     // Quit the game
-    public void Quit()
+    public static void Quit()
     {
         Environment.Exit(0);
     }
