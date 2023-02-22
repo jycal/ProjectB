@@ -11,11 +11,14 @@ public class SpiderQuest
 
     public Monster Monster;
 
+    public bool IsCompleted;
+
     // constructor
     public SpiderQuest(Player player, Monster monster)
     {
         this.Player = player;
         this.Monster = monster;
+        this.IsCompleted = false;
     }
 
 
@@ -61,6 +64,7 @@ public class SpiderQuest
     public void EndSpiderQuest()
     {
         // teruggaan naar de bridge
+        IsCompleted = true;
         Console.WriteLine($"You go back to the bridge after defeating the {Monster.NamePlural}");
 
         // spider silk uit items halen

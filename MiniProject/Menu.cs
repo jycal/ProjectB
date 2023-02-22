@@ -120,7 +120,10 @@ public class Menu
                                 Monster snake = World.MonsterByID(World.MONSTER_ID_SNAKE);
                                 // quest aanroepen
                                 Farmer farmerquest = new Farmer(Player, snake);
-                                farmerquest.Story();
+                                if (farmerquest.IsCompleted == false)
+                                {
+                                    farmerquest.Story();
+                                }
                                 break;
                             default:
                                 Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
@@ -133,6 +136,7 @@ public class Menu
                         switch (Player.CurrentLocation!.ID)
                         {
                             case 1:
+                            case 4:
                             case 6:
                                 Player.CurrentLocation = World.LocationByID(2);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
@@ -195,8 +199,11 @@ public class Menu
                                 Monster spider = World.MonsterByID(3);
                                 // spiderquest aanroepen
                                 SpiderQuest spiderquest = new SpiderQuest(Player, spider);
-                                spiderquest.StartSpiderQuest();
-                                spiderquest.EndSpiderQuest();
+                                if (spiderquest.IsCompleted == false)
+                                {
+                                    spiderquest.StartSpiderQuest();
+                                    spiderquest.EndSpiderQuest();
+                                }
                                 break;
                         }
                         break;

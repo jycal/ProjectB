@@ -6,11 +6,12 @@ class Farmer
 {
     public Player Player;
     public Monster Monster;
-
+    public bool IsCompleted;
     public Farmer(Player player, Monster monster)
     {
         this.Player = player;
         this.Monster = World.MonsterByID(2);
+        this.IsCompleted = false;
     }
 
     public void Story()
@@ -54,7 +55,8 @@ class Farmer
                         }
                     }
                     // guardpass ontvangen
-                    Console.WriteLine("Birdo hands you over the Adventurer's Pass!\n A new item has been added to your inventory.");
+                    IsCompleted = true;
+                    Console.WriteLine("Birdo hands you over the Adventurer's Pass!\nA new item has been added to your inventory.\n");
                     Item guardpass = World.ItemByID(World.ITEM_ID_ADVENTURER_PASS);
                     CountedItem guardPass = new CountedItem(guardpass, 1);
                     Player.Inventory.TheCountedItemList.Add(guardPass);

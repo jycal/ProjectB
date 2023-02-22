@@ -1,10 +1,11 @@
 class GuardPost
 {
     public Player Player;
-
+    public bool IsCompleted;
     public GuardPost(Player player)
     {
         this.Player = player;
+        this.IsCompleted = false;
     }
     public bool guard_post()
     {
@@ -19,6 +20,7 @@ class GuardPost
                 {
                     Player.Inventory.TheCountedItemList.Remove(item);
                     Console.WriteLine("The item has been removed from your inventory.");
+                    IsCompleted = true;
                     return true;
                 }
             }
