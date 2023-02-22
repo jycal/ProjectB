@@ -51,7 +51,7 @@ public class Monster
         Console.WriteLine("HP: {0}", CurrentHitPoints);
         Console.WriteLine("Attack: {0}", DoDamage());
     }
-    public void Fight(Player player)
+    public bool Fight(Player player)
     {
         // bool gameOver = false;
         Console.WriteLine("A wild {0} appears!", this.Name);
@@ -88,7 +88,7 @@ public class Monster
             else if (choice == 3)
             {
                 Console.WriteLine("You run away from the {0}!", this.Name);
-                return;
+                return true;
             }
 
             // Check if the monster is dead
@@ -98,7 +98,7 @@ public class Monster
                 player.AddGold(this.RewardGold);
                 // item bool meegeven
                 // bool itemGot = true;
-                return;
+                return true;
             }
 
             // Monster attacks the player
@@ -113,8 +113,10 @@ public class Monster
             {
                 Console.WriteLine("You have been defeated by the {0}. Game over!", this.Name);
                 // gameOver = true;
-                return;
+                return false;
             }
+
         }
+        return true;
     }
 }
