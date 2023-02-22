@@ -22,7 +22,7 @@ public class SpiderQuest
     // methods
     public void StartSpiderQuest()
     {
-        // bool itemGot = false;
+
         // intro
         Console.WriteLine($"After crossing the bridge you have arrived at the {Player.CurrentLocation!.Name}");
         Console.WriteLine($"You: “I shalt releaseth the town folks of their feareth!”");
@@ -34,15 +34,16 @@ public class SpiderQuest
         {
 
             Monster.Fight(Player);
-            // if (Monster.Fight(Player) == true)
-            // {
-            //     itemGot = true;
-            // }
+            if (Monster.Fight(Player) == true)
+            {
+                // spider silk ontvangen
+                Item spidersilk = World.ItemByID(World.ITEM_ID_SPIDER_SILK);
+            }
 
         }
 
 
-        // spider silk ontvangen
+
 
 
 
@@ -56,7 +57,15 @@ public class SpiderQuest
         // teruggaan naar de bridge
         Console.WriteLine($"You go back to the bridge after defeating the {Monster.NamePlural}");
 
-
+        // spider silk uit items halen
+        foreach (CountedItem item in Player.Inventory.TheCountedItemList)
+        {
+            if (item.TheItem.ID == World.ITEM_ID_SPIDER_SILK && item.Quantity >= 3)
+            {
+                Player.Inventory.TheCountedItemList.Remove(item);
+                break;
+            }
+        }
         // winner medal ontvangen
 
     }

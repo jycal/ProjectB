@@ -48,7 +48,9 @@ class Farmer
                         }
                     }
                     Console.WriteLine("Birdo hands you over the Adventurer's Pass!\n A new item has been added to your inventory.");
-                    Player.Inventory.TheCountedItemList.Add(ITEM_ID_ADVENTURER_PASS);
+                    Item guardpass = World.ItemByID(World.ITEM_ID_ADVENTURER_PASS);
+                    CountedItem guardPass = new CountedItem(guardpass, 1);
+                    Player.Inventory.TheCountedItemList.Add(guardPass);
                 }
                 if (Monster.Fight(Player) == false)
                 {

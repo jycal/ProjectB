@@ -81,7 +81,11 @@ public class Menu
                         // Move to location F (Farmer)
                         Player.CurrentLocation = World.LocationByID(6);
                         Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
-
+                        // slang met id ophalen uit world
+                        Monster snake = World.MonsterByID(World.MONSTER_ID_SNAKE);
+                        // quest aanroepen
+                        Farmer farmerquest = new Farmer(Player, snake);
+                        farmerquest.Story();
                         break;
                     case "T":
                         // Move to location T (Town square)
