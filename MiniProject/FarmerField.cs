@@ -10,7 +10,7 @@ class Farmer
     public Farmer(Player player, Monster monster)
     {
         this.Player = player;
-        this.Monster = World.MonsterByID(MONSTER_ID_SNAKE);
+        this.Monster = World.MonsterByID(2);
     }
 
     public void Story()
@@ -38,6 +38,17 @@ class Farmer
                     Console.WriteLine("CONGRATULATIONS YOUNG ONE YOU SLAYED THE SNAKES!!");
                     Console.WriteLine($"Birdo: THANK YOU {Player.Name}.\n YOU'VE SAVED MY CROPS!");
                     Console.WriteLine(Heart());
+                    Console.WriteLine("You hand over the 3 snakefangs you collected from your battle!");
+                    foreach (CountedItem item in Player.Inventory.TheCountedItemList)
+                    {
+                        if (item.TheItem.ID == World.ITEM_ID_SNAKE_FANG && item.Quantity >= 3)
+                        {
+                            Player.Inventory.TheCountedItemList.Remove(item);
+                            break;
+                        }
+                    }
+                    Console.WriteLine("Birdo hands you over the Adventurer's Pass!\n A new item has been added to your inventory.");
+                    Player.Inventory.TheCountedItemList.Add(ITEM_ID_ADVENTURER_PASS);
                 }
                 if (Monster.Fight(Player) == false)
                 {
