@@ -10,7 +10,7 @@ public class SuperAdventure
     public SuperAdventure(Player player)
     {
         // player aanmaken
-        _player = player;
+        // _player = player;
         DateTime now = DateTime.Now;
         string formattedTime = now.ToString("hh:mm tt");
         string intro = $@"Welcome to Kirby & The Crystal Print. Kirby named {player.Name} must find the way to Walter White, the druglord (alchemist).
