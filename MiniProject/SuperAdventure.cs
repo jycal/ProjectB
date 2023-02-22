@@ -13,7 +13,7 @@ public class SuperAdventure
         DateTime now = DateTime.Now;
         string formattedTime = now.ToString("hh:mm tt");
         string intro = $@"Welcome to Kirby & The Crystal Print. Kirby named {player.Name} must find the way to Walter White, the druglord (alchemist).
-Current location: {player.CurrentLocation.Name}, it is currently {formattedTime}
+Current location: {player.CurrentLocation!.Name}, it is currently {formattedTime}
 Time to get out of bed.
 ";
         foreach (char c in intro)
@@ -22,7 +22,7 @@ Time to get out of bed.
             Thread.Sleep(50);
         }
         Console.WriteLine();
-        Menu menuScreen = new Menu("Title", "Description", 1, 2, 3, 4);
+        Menu menuScreen = new Menu("Title", player);
         menuScreen.Screen();
         // World.PopulateLocations();
         // Menu.Screen();
@@ -45,5 +45,6 @@ Time to get out of bed.
         //     // Console.WriteLine(Discription);
         //     _gameOver = true;
         // }
+
     }
 }
