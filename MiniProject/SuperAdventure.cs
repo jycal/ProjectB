@@ -1,15 +1,12 @@
 public class SuperAdventure
 {
     // fields
-    private Player _player;
     private Monster _monster;
     private bool _gameOver;
 
     // constructor
     public SuperAdventure(Player player)
     {
-        // player aanmaken
-        // _player = player;
         DateTime now = DateTime.Now;
         string formattedTime = now.ToString("hh:mm tt");
         string intro = $@"Welcome to Kirby & The Crystal Print. Kirby named {player.Name} must find the way to Walter White, the druglord (alchemist).

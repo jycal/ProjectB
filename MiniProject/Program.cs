@@ -2,6 +2,7 @@
 {
     public static void Main()
     {
+        Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine(@"
   _  ___      _                      _______ _             _____                _        _   _____      _       _   
  | |/ (_)    | |             ___    |__   __| |           / ____|              | |      | | |  __ \    (_)     | |  

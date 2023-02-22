@@ -34,9 +34,8 @@ public class Menu
             Console.WriteLine("1: See game stats");
             Console.WriteLine("2: Move");
             Console.WriteLine("3: Quit\n");
-            int choice;
-            choice = Int32.Parse(Console.ReadLine()!);
-            if (choice == 1)
+            string choice = Console.ReadLine();
+            if (choice == "1")
             {
                 Console.WriteLine($"Your current Location: {Player.CurrentLocation!.Name}");
                 Console.WriteLine($"Your current HP is {Player.CurrentHitPoints}");
@@ -52,7 +51,7 @@ public class Menu
                     Console.WriteLine($"Your inventory consists of a {item}");
                 }
             }
-            else if (choice == 2)
+            else if (choice == "2")
             {
                 Console.WriteLine("Where would you like to go?");
                 Console.WriteLine($"You are at {Player.CurrentLocation!.Name}. From here you can go:");
@@ -85,6 +84,11 @@ public class Menu
                                 Player.CurrentLocation = World.LocationByID(4);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
                                 Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
+                                // rat met id ophalen uit world
+                                Monster rat = World.MonsterByID(World.MONSTER_ID_RAT);
+                                // quest aanroepen
+                                AlchemistQuest alchemistQuest = new AlchemistQuest(Player, rat);
+                                alchemistQuest.Story();
                                 break;
                             default:
                                 Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
@@ -223,7 +227,7 @@ public class Menu
                         break;
                 }
             }
-            else if (choice == 3)
+            else if (choice == "3")
             {
                 Quit();
             }
