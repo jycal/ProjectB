@@ -18,13 +18,13 @@ class Farmer
         Console.WriteLine($"Birdo: {Player.Name} THOU HAS ARRIVED AT THE BIRDO'S FARM HOUSE!");
         Console.WriteLine("Birdo: I can't w'rk mine own landeth with those pesky snakes slith'ring 'round! Shall thee holp me?");
         Console.WriteLine($"Will u {Player.Name} help Birdo and slayy his snakes? Yeah or Nah?");
-        string? answer = Convert.ToString(Console.ReadLine());
-        if (answer == "Yeah")
+        string? answer = Convert.ToString(Console.ReadLine()!.ToUpper());
+        if (answer == "YEAH")
         {
             Console.WriteLine($"You are at {Player.CurrentLocation!.Name}.");
             Console.WriteLine($"  P\n  A\n V F T G B S\n   H");
             Console.WriteLine("Enter 'V' to go to the Birdo's field.");
-            string Direction = Convert.ToString(Console.ReadLine()!);
+            string Direction = Convert.ToString(Console.ReadLine()!.ToUpper());
             if (Direction == "V")
             {
                 Player.CurrentLocation = World.LocationByID(World.LOCATION_ID_FARM_FIELD);
