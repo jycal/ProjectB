@@ -1,10 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 class Farmer
 {
     public Player Player;
+    public Monster Monster;
 
-    public Farmer(Player player)
+    public Farmer(Player player, Monster monster)
     {
         this.Player = player;
+        this.Monster = World.MonsterByID(MONSTER_ID_SNAKE);
     }
 
     public void Story()
@@ -26,7 +32,19 @@ class Farmer
                 Console.WriteLine("Be prepared for the dangers thay lie ahead....");
                 Console.WriteLine("You enter the field.\n As you slowly enter the field something slithers at your feet...");
                 Console.WriteLine("You get in position.\n The battle of a lifetime is going to begin.");
-
+                Monster.Fight(Player);
+                if (Monster.Fight(Player) == true)
+                {
+                    Console.WriteLine("CONGRATULATIONS YOUNG ONE YOU SLAYED THE SNAKES!!");
+                    Console.WriteLine($"Birdo: THANK YOU {Player.Name}.\n YOU'VE SAVED MY CROPS!");
+                    Console.WriteLine(Heart());
+                }
+                if (Monster.Fight(Player) == false)
+                {
+                    Console.WriteLine("OH NO YOU'VE BEEN OVERPOWERED!");
+                    Console.WriteLine("BIRDO AND HIS CROPS WILL SUFFER THE WRATH OF YOUR FAILURE!");
+                    Menu.Quit();
+                }
             }
             if (Direction != "V")
             {
@@ -34,14 +52,25 @@ class Farmer
                 Menu.Quit();
             }
 
+            static bool Heart()
+            {
+                char o = 'o';
+                Console.WriteLine("  " + o + o + o + "   " + o + o + o);
+                Console.WriteLine(" " + o + "   " + o + " " + o + "   " + o);
+                Console.WriteLine(o + "     " + o + "     " + o);
+                Console.WriteLine(o + "     " + " " + "     " + o);
+                Console.WriteLine(o + "     " + " " + "     " + o);
+                Console.WriteLine(" " + o + "    " + "     " + o);
+                Console.WriteLine("  " + o + "   " + "    " + o);
+                Console.WriteLine("   " + o + "  " + "   " + o);
+                Console.WriteLine("    " + o + "  " + " " + o);
+                Console.WriteLine("     " + o + " " + o);
+                Console.WriteLine("      " + o);
+                return true;
+            }
+
 
         }
-        Console.WriteLine("");
-        Console.WriteLine("");
-        Console.WriteLine("");
-        Console.WriteLine("");
-        Console.WriteLine("");
-        Console.WriteLine("");
     }
 
 }

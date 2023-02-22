@@ -1,5 +1,0 @@
-D:\Megan\School\informatica\project\projectb\ProjectB-1\MiniProject\obj\Debug\net6.0\MiniProject.csproj.AssemblyReference.cache
-D:\Megan\School\informatica\project\projectb\ProjectB-1\MiniProject\obj\Debug\net6.0\MiniProject.GeneratedMSBuildEditorConfig.editorconfig
-D:\Megan\School\informatica\project\projectb\ProjectB-1\MiniProject\obj\Debug\net6.0\MiniProject.AssemblyInfoInputs.cache
-D:\Megan\School\informatica\project\projectb\ProjectB-1\MiniProject\obj\Debug\net6.0\MiniProject.AssemblyInfo.cs
-D:\Megan\School\informatica\project\projectb\ProjectB-1\MiniProject\obj\Debug\net6.0\MiniProject.csproj.CoreCompileInputs.cache
