@@ -38,14 +38,17 @@ public class SpiderQuest
             {
                 // spider silk ontvangen
                 Item spidersilk = World.ItemByID(World.ITEM_ID_SPIDER_SILK);
+                CountedItem spiderLoot = new CountedItem(spidersilk, 1);
+                Player.Inventory.TheCountedItemList.Add(spiderLoot);
+
             }
 
         }
-
-
-
-
-
+        else
+        {
+            Console.WriteLine("You can't run away from the spiders. One bites you immediately killing you.\nGAME OVER");
+            Menu.Quit();
+        }
 
 
 
@@ -67,6 +70,10 @@ public class SpiderQuest
             }
         }
         // winner medal ontvangen
+
+        Item winnermedal = World.ItemByID(World.ITEM_ID_WINNERS_MEDAL);
+        CountedItem winnerLoot = new CountedItem(winnermedal, 1);
+        Player.Inventory.TheCountedItemList.Add(winnerLoot);
 
     }
 

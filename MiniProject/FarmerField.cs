@@ -36,8 +36,14 @@ class Farmer
                 if (Monster.Fight(Player) == true)
                 {
                     Console.WriteLine("CONGRATULATIONS YOUNG ONE YOU SLAYED THE SNAKES!!");
+                    // snake fangs ontvangen
+                    Console.WriteLine("You obtained 3 snake fangs");
+                    Item snakeFang = World.ItemByID(World.ITEM_ID_SNAKE_FANG);
+                    CountedItem farmerLoot = new CountedItem(snakeFang, 1);
+                    Player.Inventory.TheCountedItemList.Add(farmerLoot);
                     Console.WriteLine($"Birdo: THANK YOU {Player.Name}.\n YOU'VE SAVED MY CROPS!");
                     Console.WriteLine(Heart());
+                    // snake fangs weggeven
                     Console.WriteLine("You hand over the 3 snakefangs you collected from your battle!");
                     foreach (CountedItem item in Player.Inventory.TheCountedItemList)
                     {
@@ -47,6 +53,7 @@ class Farmer
                             break;
                         }
                     }
+                    // guardpass ontvangen
                     Console.WriteLine("Birdo hands you over the Adventurer's Pass!\n A new item has been added to your inventory.");
                     Item guardpass = World.ItemByID(World.ITEM_ID_ADVENTURER_PASS);
                     CountedItem guardPass = new CountedItem(guardpass, 1);
