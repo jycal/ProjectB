@@ -6,7 +6,7 @@ class GuardPost
     {
         this.Player = player;
     }
-    public bool guard_post
+    public bool guard_post()
     {
         Console.WriteLine("You have arrived at the gate!");
         Console.WriteLine("Jurn: O Great One who summons me, Terrible One who commands me, I stand by my oath, does thou have the Adventurer's Pass!(Y/N)");
@@ -24,6 +24,6 @@ class GuardPost
             }
         }
         Console.WriteLine("Jurn: YOU LIED!! NO ENTRY!!");
-return false;
+        return false;
     }
 }
