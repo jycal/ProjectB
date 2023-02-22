@@ -34,7 +34,7 @@ public class Menu
             Console.WriteLine("1: See game stats");
             Console.WriteLine("2: Move");
             Console.WriteLine("3: Quit\n");
-            string choice = Console.ReadLine();
+            string choice = Console.ReadLine()!;
             if (choice == "1")
             {
                 Console.WriteLine($"Your current Location: {Player.CurrentLocation!.Name}");

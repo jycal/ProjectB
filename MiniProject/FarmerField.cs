@@ -43,7 +43,7 @@ class Farmer
                     CountedItem farmerLoot = new CountedItem(snakeFang, 1);
                     Player.Inventory.TheCountedItemList.Add(farmerLoot);
                     Console.WriteLine($"Birdo: THANK YOU {Player.Name}.\n YOU'VE SAVED MY CROPS!");
-                    Console.WriteLine(Heart());
+                    Farmer.Heart();
                     // snake fangs weggeven
                     Console.WriteLine("You hand over the 3 snakefangs you collected from your battle!");
                     foreach (CountedItem item in Player.Inventory.TheCountedItemList)
@@ -74,25 +74,27 @@ class Farmer
                 Menu.Quit();
             }
 
-            static bool Heart()
-            {
-                char o = 'o';
-                Console.WriteLine("  " + o + o + o + "   " + o + o + o);
-                Console.WriteLine(" " + o + "   " + o + " " + o + "   " + o);
-                Console.WriteLine(o + "     " + o + "     " + o);
-                Console.WriteLine(o + "     " + " " + "     " + o);
-                Console.WriteLine(o + "     " + " " + "     " + o);
-                Console.WriteLine(" " + o + "    " + "     " + o);
-                Console.WriteLine("  " + o + "   " + "    " + o);
-                Console.WriteLine("   " + o + "  " + "   " + o);
-                Console.WriteLine("    " + o + "  " + " " + o);
-                Console.WriteLine("     " + o + " " + o);
-                Console.WriteLine("      " + o);
-                return true;
-            }
+
 
 
         }
+    }
+    public static void Heart()
+    {
+        char o = 'o';
+        Console.WriteLine("  " + o + o + o + "   " + o + o + o);
+        Console.WriteLine(" " + o + "   " + o + " " + o + "   " + o);
+        Console.WriteLine(o + "     " + o + "     " + o);
+        Console.WriteLine(o + "     " + " " + "     " + o);
+        Console.WriteLine(o + "     " + " " + "     " + o);
+        Console.WriteLine(" " + o + "    " + "     " + o);
+        Console.WriteLine("  " + o + "   " + "    " + o);
+        Console.WriteLine("   " + o + "  " + "   " + o);
+        Console.WriteLine("    " + o + "  " + " " + o);
+        Console.WriteLine("     " + o + " " + o);
+        Console.WriteLine("      " + o);
+        Console.WriteLine("\n");
+
     }
 
 }

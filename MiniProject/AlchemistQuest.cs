@@ -19,13 +19,13 @@ class AlchemistQuest
         Console.WriteLine($"Walter White: {Player.Name} THOU HAS ARRIVED AT THE ALCHEMIST'S HUT!");
         Console.WriteLine("Walter White: Those rats art nibbling on mine own h'rbs! I couldst very much useth an adventur'r to taketh careth of those folk.​");
         Console.WriteLine($"Will u {Player.Name} help Walter White and DESTROY the rats? Yeah or Nah?");
-        string? answer = Convert.ToString(Console.ReadLine());
-        if (answer == "Yeah")
+        string? answer = Convert.ToString(Console.ReadLine()!.ToUpper());
+        if (answer == "YEAH")
         {
             Console.WriteLine($"You are at {Player.CurrentLocation!.Name}.");
-            Console.WriteLine($"  P\n  A\n V F T G B S\n   H");
+            Console.WriteLine($"    P\n    A\nV F T G B S\n    H\n");
             Console.WriteLine("Enter 'P' to go to the Alchemist's garden.");
-            string Direction = Convert.ToString(Console.ReadLine()!);
+            string Direction = Convert.ToString(Console.ReadLine()!.ToUpper());
             if (Direction == "P")
             {
                 Player.CurrentLocation = World.LocationByID(World.LOCATION_ID_FARM_FIELD);
@@ -43,7 +43,7 @@ class AlchemistQuest
                     CountedItem farmerLoot = new CountedItem(snakeFang, 1);
                     Player.Inventory.TheCountedItemList.Add(farmerLoot);
                     Console.WriteLine($"Walter White: THANK YOU {Player.Name}.\n YOU'VE SAVED MY GARDEN!");
-                    Console.WriteLine(Heart());
+                    AlchemistQuest.Heart();
                     // snake fangs weggeven
                     Console.WriteLine("You hand over the 3 rat tails you collected from your battle!");
                     foreach (CountedItem item in Player.Inventory.TheCountedItemList)
@@ -72,25 +72,28 @@ class AlchemistQuest
                 Menu.Quit();
             }
 
-            static bool Heart()
-            {
-                char o = 'o';
-                Console.WriteLine("  " + o + o + o + "   " + o + o + o);
-                Console.WriteLine(" " + o + "   " + o + " " + o + "   " + o);
-                Console.WriteLine(o + "     " + o + "     " + o);
-                Console.WriteLine(o + "     " + " " + "     " + o);
-                Console.WriteLine(o + "     " + " " + "     " + o);
-                Console.WriteLine(" " + o + "    " + "     " + o);
-                Console.WriteLine("  " + o + "   " + "    " + o);
-                Console.WriteLine("   " + o + "  " + "   " + o);
-                Console.WriteLine("    " + o + "  " + " " + o);
-                Console.WriteLine("     " + o + " " + o);
-                Console.WriteLine("      " + o);
-                return true;
-            }
+
 
 
         }
+    }
+
+    public static void Heart()
+    {
+        char o = 'o';
+        Console.WriteLine("  " + o + o + o + "   " + o + o + o);
+        Console.WriteLine(" " + o + "   " + o + " " + o + "   " + o);
+        Console.WriteLine(o + "     " + o + "     " + o);
+        Console.WriteLine(o + "     " + " " + "     " + o);
+        Console.WriteLine(o + "     " + " " + "     " + o);
+        Console.WriteLine(" " + o + "    " + "     " + o);
+        Console.WriteLine("  " + o + "   " + "    " + o);
+        Console.WriteLine("   " + o + "  " + "   " + o);
+        Console.WriteLine("    " + o + "  " + " " + o);
+        Console.WriteLine("     " + o + " " + o);
+        Console.WriteLine("      " + o);
+        Console.WriteLine("\n");
+
     }
 
 }
