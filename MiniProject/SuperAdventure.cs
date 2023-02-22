@@ -12,7 +12,7 @@ public class SuperAdventure
         _player = player;
         DateTime now = DateTime.Now;
         string formattedTime = now.ToString("hh:mm tt");
-        string intro = $@"Welcome to Kirby & TheCrystalPrint. Kirby named {player.Name} must find the way to Walter White, the druglord (alchemist).
+        string intro = $@"Welcome to Kirby & The Crystal Print. Kirby named {player.Name} must find the way to Walter White, the druglord (alchemist).
 Current location: {player.CurrentLocation.Name}, it is currently {formattedTime}
 Time to get out of bed.
 ";

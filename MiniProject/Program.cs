@@ -16,11 +16,14 @@
         string text = "What is your name? ";
         foreach (char c in text)
         {
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.Write(c);
-            Thread.Sleep(50);
+            Thread.Sleep(40);
         }
         Console.WriteLine();
         string name = Console.ReadLine()!;
+
+
 
         Player PlayerOne = new Player(name);
         SuperAdventure super = new SuperAdventure(PlayerOne);
