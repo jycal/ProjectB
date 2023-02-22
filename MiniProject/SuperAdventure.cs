@@ -3,6 +3,7 @@ public class SuperAdventure
 {
     // fields
     private Player _player;
+    private Monster _monster;
     private bool _gameOver;
 
     // constructor
@@ -31,7 +32,10 @@ Time to get out of bed.
     }
 
     // methods
+    //vanaf hier totMonster.CurrentHitPoints
 
+
+    // hier
     // game loop
     public void Run()
     {

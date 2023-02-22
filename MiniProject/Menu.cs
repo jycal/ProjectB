@@ -122,6 +122,7 @@ public class Menu
                         {
                             Console.WriteLine("You do not have the adventure pass to enter this area. Returning to menu...\n");
                             Console.ReadKey();
+
                             break;
                         }
                         break;
