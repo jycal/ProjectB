@@ -62,42 +62,96 @@ public class Menu
                 {
                     case "P":
                         // Move to location P (Alchemist's garden)
-                        Player.CurrentLocation = World.LocationByID(5);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                        switch (Player.CurrentLocation!.ID)
+                        {
+                            case 4:
+                                Player.CurrentLocation = World.LocationByID(5);
+                                Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                break;
+                            default:
+                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.ReadKey();
+                                break;
+                        }
                         break;
                     case "A":
                         // Move to location A (Alchemist's hut)
-                        Player.CurrentLocation = World.LocationByID(4);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
-
+                        switch (Player.CurrentLocation!.ID)
+                        {
+                            case 2:
+                            case 5:
+                                Player.CurrentLocation = World.LocationByID(4);
+                                Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                break;
+                            default:
+                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.ReadKey();
+                                break;
+                        }
                         break;
                     case "V":
                         // Move to location V (Farmer's field)
-                        Player.CurrentLocation = World.LocationByID(7);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
-
+                        switch (Player.CurrentLocation!.ID)
+                        {
+                            case 7:
+                                Player.CurrentLocation = World.LocationByID(7);
+                                Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                break;
+                            default:
+                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.ReadKey();
+                                break;
+                        }
                         break;
                     case "F":
                         // Move to location F (Farmer)
-                        Player.CurrentLocation = World.LocationByID(6);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
-                        // slang met id ophalen uit world
-                        Monster snake = World.MonsterByID(World.MONSTER_ID_SNAKE);
-                        // quest aanroepen
-                        Farmer farmerquest = new Farmer(Player, snake);
-                        farmerquest.Story();
+                        switch (Player.CurrentLocation!.ID)
+                        {
+                            case 2:
+                            case 7:
+                                Player.CurrentLocation = World.LocationByID(6);
+                                Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                // slang met id ophalen uit world
+                                Monster snake = World.MonsterByID(World.MONSTER_ID_SNAKE);
+                                // quest aanroepen
+                                Farmer farmerquest = new Farmer(Player, snake);
+                                farmerquest.Story();
+                                break;
+                            default:
+                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.ReadKey();
+                                break;
+                        }
                         break;
                     case "T":
                         // Move to location T (Town square)
-                        Player.CurrentLocation = World.LocationByID(2);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
-
+                        switch (Player.CurrentLocation!.ID)
+                        {
+                            case 1:
+                            case 6:
+                                Player.CurrentLocation = World.LocationByID(2);
+                                Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                break;
+                            default:
+                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.ReadKey();
+                                break;
+                        }
                         break;
                     case "G":
                         // Move to location G (Guard post)
-                        Player.CurrentLocation = World.LocationByID(3);
-                        Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
-
+                        switch (Player.CurrentLocation!.ID)
+                        {
+                            case 2:
+                            case 8:
+                                Player.CurrentLocation = World.LocationByID(3);
+                                Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
+                                break;
+                            default:
+                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.ReadKey();
+                                break;
+                        }
                         break;
                     case "B":
                         // Move to location B (Bridge)
