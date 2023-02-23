@@ -1,8 +1,8 @@
 public class SuperAdventure
 {
     // fields
-    private Monster _monster;
-    private bool _gameOver;
+    // private Monster _monster;
+    // private bool _gameOver;
 
     // constructor
     public SuperAdventure(Player player)

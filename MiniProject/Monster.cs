@@ -14,7 +14,7 @@ public class Monster
 
     public int RewardGold = 5;
 
-    public CountedItemList? Loot;
+    public CountedItemList Loot;
 
     public int CurrentHitPoints = 14;
 
