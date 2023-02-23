@@ -3,8 +3,8 @@ public class Weapon
     public int ID;
     public string? Name;
     public string? NamePlural;
-    public int MinimumDamage;
-    public int MaximumDamage;
+    public static int MinimumDamage;
+    public static int MaximumDamage;
 
     public Weapon(int id, string name, string namePlural, int minimumDamage, int maximumDamage)
     {
@@ -27,14 +27,12 @@ public class Weapon
 
 
     // method om damage te doen
-    public int DoDamage()
+    public static int DoWeaponDamage()
     {
         Random attackRange = new Random();
         // random damage kiezen tussn min en max
-        int damageValue = attackRange.Next(this.MinimumDamage, this.MaximumDamage);
+        int damageValue = attackRange.Next(MinimumDamage, MaximumDamage);
         // damage van monster hp afhalen
-
-        // via class monster of gwn int returnen?
         return damageValue;
     }
 }

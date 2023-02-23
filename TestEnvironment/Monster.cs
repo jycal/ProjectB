@@ -4,21 +4,21 @@ public class Monster
     // Fields
     public int ID;
 
-    public static string? Name;
+    public string? Name;
 
-    public static string? NamePlural;
+    public string? NamePlural;
 
-    public static int MaximumDamage = 3;
+    public int MaximumDamage = 3;
 
-    public static int MinimumDamage = 0;
+    public int MinimumDamage = 0;
 
-    public static int RewardGold = 5;
+    public int RewardGold = 5;
 
     public CountedItemList? Loot;
 
-    public static int CurrentHitPoints = 14;
+    public int CurrentHitPoints = 14;
 
-    public static int MaximumHitPoints = 14;
+    public int MaximumHitPoints = 14;
 
     public Monster(int id, string name, string namePlural, int maximumDamage, int minimumDamage, int rewardGold, int currentHitPoints, int maximumHitPoints)
     {
@@ -44,10 +44,90 @@ public class Monster
         return damageValue;
     }
 
+
     public void Stats()
     {
         Console.WriteLine("The {0} {1}'s Stats:", Name, NamePlural);
         Console.WriteLine("HP: {0}", CurrentHitPoints);
         Console.WriteLine("Attack: {0}", DoDamage());
+    }
+    public bool Fight(Player player)
+    {
+
+
+        // Continue the fight until either the player or the monster has 0 HP
+        while (player.CurrentHitPoints > 0 && this.CurrentHitPoints > 0)
+        {
+            bool gameStart = true;
+            do
+            {
+                Console.WriteLine("A wild {0} appears!", this.Name);
+                Console.WriteLine("Prepare to fight!\n");
+                gameStart = false;
+                break;
+            } while (gameStart == true);
+            // Prompt the player to choose an attack
+            Console.WriteLine($"Player HP: {player.CurrentHitPoints}");
+            Console.WriteLine($"Monster HP: {this.CurrentHitPoints}");
+            Console.WriteLine("Choose your attack:");
+            Console.WriteLine("1. Attack with {0}", player.CurrentWeapon.Name);
+            Console.WriteLine("2. Use a healing potion");
+            Console.WriteLine("3. Run away");
+
+            // Get the player's choice
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            // Attack the monster
+            if (choice == 1)
+            {
+                // Calculate the player's damage
+                int playerDamage = Weapon.DoWeaponDamage();
+                Console.WriteLine("You attack the {0} with your {1} for {2} damage!", this.Name, player.CurrentWeapon.Name, playerDamage);
+
+                // Subtract the damage from the monster's HP
+                this.CurrentHitPoints -= playerDamage;
+            }
+            // Heal the player
+            else if (choice == 2)
+            {
+                player.UpPlayerHealth(10);
+                Console.WriteLine("You drink a healing potion and restore 10 HP. Your current HP is {0}.", player.CurrentHitPoints);
+            }
+            // Player runs away
+            else if (choice == 3)
+            {
+                Console.WriteLine("You run away from the {0}!", this.Name);
+                return true;
+            }
+
+            // Check if the monster is dead
+            if (this.CurrentHitPoints <= 0)
+            {
+                Console.WriteLine("You have defeated the {0}!", this.Name);
+                player.AddGold(this.RewardGold);
+                int experiencepoints = 7;
+                player.LevelUp(experiencepoints);
+                // item bool meegeven
+                // bool itemGot = true;
+                return true;
+            }
+
+            // Monster attacks the player
+            int monsterDamage = this.DoDamage();
+            Console.WriteLine("The {0} attacks you for {1} damage!", this.Name, monsterDamage);
+
+            // Subtract the damage from the player's HP
+            player.LowerPlayerHealth(monsterDamage);
+
+            // Check if the player is dead
+            if (player.CurrentHitPoints <= 0)
+            {
+                Console.WriteLine("You have been defeated by the {0}. Game over!", this.Name);
+                // gameOver = true;
+                return false;
+            }
+
+        }
+        return true;
     }
 }

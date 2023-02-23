@@ -3,7 +3,7 @@ public class Player
     // fields
     public string Name;
     public int CurrentHitPoints;
-    public int MaximumHitPoints = 100;
+    public int MaximumHitPoints = 10;
     public int Gold;
     public int ExperiencePoints;
     public int Level;
@@ -25,7 +25,7 @@ public class Player
         this.CurrentWeapon = null!;
         // begint op locatie 1
         // hp op 100 zetten
-        this.CurrentHitPoints = 100;
+        this.CurrentHitPoints = 10;
         // inventory en questlog aanmaken
         this.QuestLog = new QuestList();
         this.Inventory = new CountedItemList();
