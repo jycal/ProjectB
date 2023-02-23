@@ -239,7 +239,7 @@ public class Menu
                                 }
                                 else
                                 {
-                                    Console.WriteLine("You see a the corpse of Janneke The Spider");
+                                    Console.WriteLine("You see the corpse of Janneke The Spider");
                                     Console.WriteLine("You start dancing on it...");
                                     Console.ReadKey();
                                 }
