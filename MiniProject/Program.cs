@@ -13,16 +13,27 @@
                      __/ |                                             __/ |                                        
                     |___/                                             |___/                                         
 ");
-
-        string text = "What is your name? ";
-        foreach (char c in text)
+        string name;
+        while (true)
         {
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write(c);
-            Thread.Sleep(40);
+            string text = "What is your name? ";
+            foreach (char c in text)
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.Write(c);
+                Thread.Sleep(40);
+            }
+            Console.WriteLine();
+            name = Console.ReadLine()!;
+            if (name.Length > 0)
+            {
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Enter a valid name!");
+            }
         }
-        Console.WriteLine();
-        string name = Console.ReadLine()!;
 
         Player PlayerOne = new Player(name);
         SuperAdventure super = new SuperAdventure(PlayerOne);

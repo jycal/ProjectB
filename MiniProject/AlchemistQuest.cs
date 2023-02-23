@@ -7,11 +7,13 @@ class AlchemistQuest
 {
     public Player Player;
     public Monster Monster;
+    public static bool IsCompleted;
 
     public AlchemistQuest(Player player, Monster monster)
     {
         this.Player = player;
         this.Monster = World.MonsterByID(1);
+        IsCompleted = false;
     }
 
     public void Story()
@@ -28,11 +30,11 @@ class AlchemistQuest
             string Direction = Convert.ToString(Console.ReadLine()!.ToUpper());
             if (Direction == "P")
             {
-                Player.CurrentLocation = World.LocationByID(World.LOCATION_ID_FARM_FIELD);
+                Player.CurrentLocation = World.LocationByID(5);
                 Console.WriteLine("U HAVE CHOSEN YOUNG ONE!");
                 Console.WriteLine("Be prepared for the dangers thay lie ahead....");
-                Console.WriteLine("You enter the garden.\n As you slowly enter the garden something runs at your feet...");
-                Console.WriteLine("You get in position.\n The battle of a lifetime is going to begin.");
+                Console.WriteLine("You enter the garden.\nAs you slowly enter the garden something runs at your feet...");
+                Console.WriteLine("You get in position.\nThe battle of a lifetime is going to begin.");
                 Monster.Fight(Player);
                 if (Monster.Fight(Player) == true)
                 {
@@ -42,9 +44,23 @@ class AlchemistQuest
                     Item snakeFang = World.ItemByID(World.ITEM_ID_SNAKE_FANG);
                     CountedItem farmerLoot = new CountedItem(snakeFang, 1);
                     Player.Inventory.TheCountedItemList.Add(farmerLoot);
-                    Console.WriteLine($"Walter White: THANK YOU {Player.Name}.\n YOU'VE SAVED MY GARDEN!");
-                    AlchemistQuest.Heart();
+                    Console.WriteLine($"Walter White: THANK YOU {Player.Name}.\n YOU'VE SAVED MY GARDEN! <3");
+                    // AlchemistQuest.Heart();
+                    char o = 'o';
+                    Console.WriteLine("  " + o + o + o + "   " + o + o + o);
+                    Console.WriteLine(" " + o + "   " + o + " " + o + "   " + o);
+                    Console.WriteLine(o + "     " + o + "     " + o);
+                    Console.WriteLine(o + "     " + " " + "     " + o);
+                    Console.WriteLine(o + "     " + " " + "     " + o);
+                    Console.WriteLine(" " + o + "    " + "     " + o);
+                    Console.WriteLine("  " + o + "   " + "    " + o);
+                    Console.WriteLine("   " + o + "  " + "   " + o);
+                    Console.WriteLine("    " + o + "  " + " " + o);
+                    Console.WriteLine("     " + o + " " + o);
+                    Console.WriteLine("      " + o);
+                    Console.WriteLine("\n");
                     // snake fangs weggeven
+                    IsCompleted = true;
                     Console.WriteLine("You hand over the 3 rat tails you collected from your battle!");
                     foreach (CountedItem item in Player.Inventory.TheCountedItemList)
                     {
@@ -93,7 +109,6 @@ class AlchemistQuest
         Console.WriteLine("     " + o + " " + o);
         Console.WriteLine("      " + o);
         Console.WriteLine("\n");
-
     }
 
 }

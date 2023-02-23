@@ -6,12 +6,12 @@ class Farmer
 {
     public Player Player;
     public Monster Monster;
-    public bool IsCompleted;
+    public static bool IsCompleted;
     public Farmer(Player player, Monster monster)
     {
         this.Player = player;
         this.Monster = World.MonsterByID(2);
-        this.IsCompleted = false;
+        IsCompleted = false;
     }
 
     public void Story()
@@ -31,8 +31,8 @@ class Farmer
                 Player.CurrentLocation = World.LocationByID(World.LOCATION_ID_FARM_FIELD);
                 Console.WriteLine("U HAVE CHOSEN YOUNG ONE!");
                 Console.WriteLine("Be prepared for the dangers thay lie ahead....");
-                Console.WriteLine("You enter the field.\n As you slowly enter the field something slithers at your feet...");
-                Console.WriteLine("You get in position.\n The battle of a lifetime is going to begin.");
+                Console.WriteLine("You enter the field.\nAs you slowly enter the field something slithers at your feet...");
+                Console.WriteLine("You get in position.\nThe battle of a lifetime is going to begin.");
                 Monster.Fight(Player);
                 if (Monster.Fight(Player) == true)
                 {
@@ -42,8 +42,8 @@ class Farmer
                     Item snakeFang = World.ItemByID(World.ITEM_ID_SNAKE_FANG);
                     CountedItem farmerLoot = new CountedItem(snakeFang, 1);
                     Player.Inventory.TheCountedItemList.Add(farmerLoot);
-                    Console.WriteLine($"Birdo: THANK YOU {Player.Name}.\n YOU'VE SAVED MY CROPS!");
-                    Farmer.Heart();
+                    Console.WriteLine($"Birdo: THANK YOU {Player.Name}.\nYOU'VE SAVED MY CROPS! <3");
+                    // Farmer.Heart();
                     // snake fangs weggeven
                     Console.WriteLine("You hand over the 3 snakefangs you collected from your battle!");
                     foreach (CountedItem item in Player.Inventory.TheCountedItemList)
@@ -94,7 +94,6 @@ class Farmer
         Console.WriteLine("     " + o + " " + o);
         Console.WriteLine("      " + o);
         Console.WriteLine("\n");
-
     }
 
 }

@@ -9,22 +9,29 @@ public class SuperAdventure
     {
         DateTime now = DateTime.Now;
         string formattedTime = now.ToString("hh:mm tt");
-        string intro = $@"Welcome to Kirby & The Crystal Print. Kirby named {player.Name} must find the way to Walter White, the druglord (alchemist).
+        string intro = $@"Welcome to Kirby & The Crystal Print. Kirby named {player.Name} must find the way to Walter White, the druglord (alchemist) who will ask him a grand request.
+
 Current location: {player.CurrentLocation!.Name}, it is currently {formattedTime}
+
 Time to get out of bed.
 ";
-
 
         foreach (char c in intro)
         {
             Console.Write(c);
-            Thread.Sleep(50);
+            Thread.Sleep(40);
         }
         Console.WriteLine();
         // zwaard laten oppaken
         Weapon zwaard = World.WeaponByID(1);
         player.CurrentWeapon = zwaard;
-        Console.WriteLine($"While getting out of bed you stub your toe on an object. You look down and it's a {player.CurrentWeapon.Name}!\nThis could come in handy later!\n\n");
+        string stub = $"While getting out of bed you stub your toe on an object. You look down and it's a {player.CurrentWeapon.Name}!\nThis could come in handy later!\n";
+        foreach (char c in stub)
+        {
+            Console.Write(c);
+            Thread.Sleep(40);
+        }
+        Console.WriteLine();
         Menu menuScreen = new Menu("Title", player);
         menuScreen.Screen();
         // World.PopulateLocations();

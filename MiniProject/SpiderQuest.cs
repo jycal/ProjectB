@@ -11,14 +11,14 @@ public class SpiderQuest
 
     public Monster Monster;
 
-    public bool IsCompleted;
+    public static bool IsCompleted;
 
     // constructor
     public SpiderQuest(Player player, Monster monster)
     {
         this.Player = player;
         this.Monster = monster;
-        this.IsCompleted = false;
+        IsCompleted = false;
     }
 
 
@@ -45,7 +45,6 @@ public class SpiderQuest
                 Item spidersilk = World.ItemByID(World.ITEM_ID_SPIDER_SILK);
                 CountedItem spiderLoot = new CountedItem(spidersilk, 1);
                 Player.Inventory.TheCountedItemList.Add(spiderLoot);
-
             }
 
         }
@@ -55,10 +54,6 @@ public class SpiderQuest
             Console.WriteLine("You can't run away from the spiders. One bites you immediately killing you.\nGAME OVER");
             Menu.Quit();
         }
-
-
-
-
     }
 
     public void EndSpiderQuest()
@@ -83,8 +78,5 @@ public class SpiderQuest
         Item winnermedal = World.ItemByID(World.ITEM_ID_WINNERS_MEDAL);
         CountedItem winnerLoot = new CountedItem(winnermedal, 1);
         Player.Inventory.TheCountedItemList.Add(winnerLoot);
-
     }
-
-
 }

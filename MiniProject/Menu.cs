@@ -30,6 +30,7 @@ public class Menu
         bool playerSelected = false;
         while (!playerSelected)
         {
+            Console.WriteLine("<----------------------------------------------------------->");
             Console.WriteLine("What wouLd you like to do (Enter a number)?");
             Console.WriteLine("1: See game stats");
             Console.WriteLine("2: Move");
@@ -70,7 +71,7 @@ public class Menu
                                 Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 break;
                             default:
-                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.WriteLine("You are not allowed to enter this area or you area already in this area. Returning to menu...\n");
                                 Console.ReadKey();
                                 break;
                         }
@@ -87,11 +88,22 @@ public class Menu
                                 // rat met id ophalen uit world
                                 Monster rat = World.MonsterByID(World.MONSTER_ID_RAT);
                                 // quest aanroepen
-                                AlchemistQuest alchemistQuest = new AlchemistQuest(Player, rat);
-                                alchemistQuest.Story();
+                                if (AlchemistQuest.IsCompleted == false)
+                                {
+                                    AlchemistQuest alchemistQuest = new AlchemistQuest(Player, rat);
+                                    alchemistQuest.Story();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Wolter: PLEASE HELP ME WITH RETRIEVING A MYSTICAL PRINT!!!");
+                                    Console.WriteLine("Wolter: I NEED IT TO FINISH MY EXPERIMENT!!!");
+                                    Console.WriteLine("Wolter: I WILL GIVE YOU A REWARD IF YOU HELP ME!!!");
+                                    Console.WriteLine($"{Player.Name}: no.\n");
+                                    Console.ReadKey();
+                                }
                                 break;
                             default:
-                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.WriteLine("You are not allowed to enter this area or you area already in this area. Returning to menu...\n");
                                 Console.ReadKey();
                                 break;
                         }
@@ -101,12 +113,12 @@ public class Menu
                         switch (Player.CurrentLocation!.ID)
                         {
                             case 7:
-                                Player.CurrentLocation = World.LocationByID(7);
+                                Player.CurrentLocation = World.LocationByID(5);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
                                 Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 break;
                             default:
-                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.WriteLine("You are not allowed to enter this area or you area already in this area. Returning to menu...\n");
                                 Console.ReadKey();
                                 break;
                         }
@@ -123,14 +135,19 @@ public class Menu
                                 // slang met id ophalen uit world
                                 Monster snake = World.MonsterByID(World.MONSTER_ID_SNAKE);
                                 // quest aanroepen
-                                Farmer farmerquest = new Farmer(Player, snake);
-                                if (farmerquest.IsCompleted == false)
+                                if (Farmer.IsCompleted == false)
                                 {
+                                    Farmer farmerquest = new Farmer(Player, snake);
                                     farmerquest.Story();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Birdo is grateful that you helped and stares at you...\n");
+                                    Console.ReadKey();
                                 }
                                 break;
                             default:
-                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.WriteLine("You are not allowed to enter this area or you area already in this area. Returning to menu...\n");
                                 Console.ReadKey();
                                 break;
                         }
@@ -140,6 +157,7 @@ public class Menu
                         switch (Player.CurrentLocation!.ID)
                         {
                             case 1:
+                            case 3:
                             case 4:
                             case 6:
                                 Player.CurrentLocation = World.LocationByID(2);
@@ -147,7 +165,7 @@ public class Menu
                                 Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 break;
                             default:
-                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.WriteLine("You are not allowed to enter this area or you area already in this area. Returning to menu...\n");
                                 Console.ReadKey();
                                 break;
                         }
@@ -161,16 +179,26 @@ public class Menu
                                 Player.CurrentLocation = World.LocationByID(3);
                                 Console.WriteLine($"You have arrived at {Player.CurrentLocation.Name}.\n");
                                 Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
-                                GuardPost guardpost = new GuardPost(Player);
-                                if (guardpost.guard_post() == false)
+                                if (GuardPost.IsCompleted == false)
                                 {
-                                    Player.CurrentLocation = World.LocationByID(2);
-                                    Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                    GuardPost guardpost = new GuardPost(Player);
+                                    bool coward = guardpost.guard_post();
+                                    if (coward == false)
+                                    {
+                                        Player.CurrentLocation = World.LocationByID(2);
+                                        Console.WriteLine($"You stand in front of the guard post. Like a coward you turn around and run back to {Player.CurrentLocation.Name}.\n");
+                                        Console.WriteLine("You are not allowed to enter this area or you area already in this area. Returning to menu...\n");
+                                        Console.ReadKey();
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Jurn the grand gaurd stares in awe at the magnicent adventurer...\n");
                                     Console.ReadKey();
                                 }
                                 break;
                             default:
-                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.WriteLine("You are not allowed to enter this area or you area already in this area. Returning to menu...\n");
                                 Console.ReadKey();
                                 break;
                         }
@@ -186,7 +214,7 @@ public class Menu
                                 Console.WriteLine($"{Player.CurrentLocation.Description}.\n");
                                 break;
                             default:
-                                Console.WriteLine("You are not allowed to enter this area. Returning to menu...\n");
+                                Console.WriteLine("You are not allowed to enter this area or you area already in this area. Returning to menu...\n");
                                 Console.ReadKey();
                                 break;
                         }
@@ -202,11 +230,18 @@ public class Menu
                                 // spider met id ophalen uit world
                                 Monster spider = World.MonsterByID(3);
                                 // spiderquest aanroepen
-                                SpiderQuest spiderquest = new SpiderQuest(Player, spider);
-                                if (spiderquest.IsCompleted == false)
+                                if (SpiderQuest.IsCompleted == false)
                                 {
+                                    SpiderQuest spiderquest = new SpiderQuest(Player, spider);
                                     spiderquest.StartSpiderQuest();
                                     spiderquest.EndSpiderQuest();
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine("You see a the corpse of Janneke The Spider");
+                                    Console.WriteLine("You start dancing on it...");
+                                    Console.ReadKey();
                                 }
                                 break;
                         }

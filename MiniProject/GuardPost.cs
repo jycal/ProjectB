@@ -1,11 +1,11 @@
 class GuardPost
 {
     public Player Player;
-    public bool IsCompleted;
+    public static bool IsCompleted;
     public GuardPost(Player player)
     {
         this.Player = player;
-        this.IsCompleted = false;
+        IsCompleted = false;
     }
     public bool guard_post()
     {
@@ -25,7 +25,7 @@ class GuardPost
                 }
             }
         }
-        Console.WriteLine("Jurn: YOU LIED!! NO ENTRY!!");
+        Console.WriteLine("Jurn: YOU LIED!! NO ENTRY!! COME BACK WHEN YOU HAVE THE PASS!!");
         return false;
     }
 }
